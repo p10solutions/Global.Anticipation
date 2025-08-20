@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "30969b10-8db4-465a-baf0-a3a3ba7626f3",
+		"name": "Anticipation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2004887"
+	},
+	"item": [
+		{
+			"name": "Create Anticipation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "api-version",
+						"value": "1"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"creatorId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"requestedAmount\": 110,\n  \"requestDate\": \"2025-08-20T00:03:51.716Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7115/api/v1/anticipations",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7115",
+					"path": [
+						"api",
+						"v1",
+						"anticipations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Approve or Reject Anticipation",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "api-version",
+						"value": "1"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"status\": \"Approved\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7115/api/v1/anticipations/74b3fea1-e295-4ec7-bc97-fc095946d57b/status",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7115",
+					"path": [
+						"api",
+						"v1",
+						"anticipations",
+						"74b3fea1-e295-4ec7-bc97-fc095946d57b",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Anticipation by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "api-version",
+						"value": "1"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7115/api/v1/anticipations/74b3fea1-e295-4ec7-bc97-fc095946d57b",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7115",
+					"path": [
+						"api",
+						"v1",
+						"anticipations",
+						"74b3fea1-e295-4ec7-bc97-fc095946d57b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Anticipation by creator id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "api-version",
+						"value": "1"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7115/api/v1/creators/3fa85f64-5717-4562-b3fc-2c963f66afa6/anticipations",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7115",
+					"path": [
+						"api",
+						"v1",
+						"creators",
+						"3fa85f64-5717-4562-b3fc-2c963f66afa6",
+						"anticipations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Simulate Anticipation",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "api-version",
+						"value": "1"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7115/api/v1/anticipations/simulate?requestedAmount=101",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7115",
+					"path": [
+						"api",
+						"v1",
+						"anticipations",
+						"simulate"
+					],
+					"query": [
+						{
+							"key": "requestedAmount",
+							"value": "101"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

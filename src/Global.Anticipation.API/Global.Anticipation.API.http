@@ -1,0 +1,6 @@
+@Global.Anticipation.API_HostAddress = http://localhost:5108
+
+GET {{Global.Anticipation.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
